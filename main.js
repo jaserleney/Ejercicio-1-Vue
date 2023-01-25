@@ -34,7 +34,17 @@ var app = new Vue({
       };
 
       const getId = () => {
-        this.id = Date.now().toString(30);
+        const char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        let chartRamdon = "";
+        for (let i = 0; i < 4; i++) {
+          chartRamdon += char.charAt(Math.floor(Math.random() * char.length));
+        }
+
+        let numRamdon = Math.round(
+          Math.random() * (9999 - 1000) + 1000
+        ).toString();
+
+        this.id = `${chartRamdon}${numRamdon}`;
       };
 
       getId();
@@ -44,8 +54,9 @@ var app = new Vue({
       this.db.push({
         nombres: this.nombres,
         apellidos: this.apellidos,
+        nombreCompleto: `${this.nombres} ${this.apellidos}`,
         user: this.user,
-        edad: this.edad,
+        edad: `${this.edad} años`,
         id: this.id,
       });
 
