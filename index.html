@@ -5,12 +5,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
   <title>Vue Ejercicio</title>
 </head>
 
 <body>
-  <div id="app">
-    <h1>{{message}}</h1>
+  <div id="app" class="container">
+    <h1 class="text-center m-3">{{message}}</h1>
+    <div class=" mb-3">
+      <label for="formGroupExampleInput" class="form-label">Escribe Tus Nombres</label>
+      <input v-model="nombres" type="text" class="form-control" id="formGroupExampleInput">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Escribe Tus Apellidos</label>
+      <input v-model="apellidos" type="text" class="form-control" id="formGroupExampleInput2">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput3" class="form-label">Escribe Tu Nombre De Usuario</label>
+      <input v-model="user" type="text" class="form-control" id="formGroupExampleInput3">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput4" class="form-label">Fecha Nacimiento</label>
+      <input v-model="date" type="date" class="form-control" id="formGroupExampleInput4">
+    </div>
+    <button @click="guardarDatos" type="button" class="btn btn-primary">Guardar Datos</button>
   </div>
 
 
