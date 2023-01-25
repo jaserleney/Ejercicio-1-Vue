@@ -28,7 +28,7 @@
       <label for="formGroupExampleInput4" class="form-label">Fecha Nacimiento</label>
       <input v-model="date" type="date" class="form-control" id="formGroupExampleInput4">
     </div>
-    <button @click="guardarDatos" type="button" class="btn btn-primary">Guardar Datos</button>
+    <button :disabled="seen" @click="guardarDatos" type="button" class="btn btn-primary">Guardar Datos </button>
     <ul>
       <li v-for="data in db">{{data}}</li>
     </ul>
