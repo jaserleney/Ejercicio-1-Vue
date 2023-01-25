@@ -22,6 +22,15 @@ var app = new Vue({
     guardarDatos() {
       const verificarUsers = () => {
         const existeUser = this.db.find((user) => user.user === this.user);
+        if (
+          this.user === "" ||
+          this.nombres === "" ||
+          this.apellidos === "" ||
+          this.date === ""
+        ) {
+          alert("Todos los campos son obligatorios");
+          return false;
+        }
         if (existeUser) {
           alert("El nombre de usuario ya existe, por favor ingrese otro");
           return false;
